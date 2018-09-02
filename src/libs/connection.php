@@ -4,7 +4,6 @@
  * Class PDOConnection
  */
 class PDOConnection {
-    private function __construct() {}
 
     public static function getConnection() {
         $host = DB_HOST;
@@ -18,8 +17,6 @@ class PDOConnection {
             $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-            // Return the connection
-            //echo "connected";
             return $connection;
 
         } catch (PDOException $e) {
